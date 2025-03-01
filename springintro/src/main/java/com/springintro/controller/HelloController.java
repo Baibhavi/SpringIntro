@@ -15,4 +15,10 @@ public class HelloController {
     public String queryController(@RequestParam(value = "name") String name){
         return "Hello " + name + " !";
     }
+
+    //used params to take input and display it .
+    @GetMapping("/param/{name}")
+    public String paramController(@PathVariable(value = "name") String name){
+        return "Hello " + name + " !";
+    }
 }
