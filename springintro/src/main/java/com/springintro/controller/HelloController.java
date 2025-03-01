@@ -1,5 +1,6 @@
 package com.springintro.controller;
 
+import com.springintro.controller.dtu.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,5 +21,11 @@ public class HelloController {
     @GetMapping("/param/{name}")
     public String paramController(@PathVariable(value = "name") String name){
         return "Hello " + name + " !";
+    }
+
+    // displaying users first name and last name with RequestBody and PostMapping
+    @PostMapping("/post")
+    public String postController(@RequestBody User user){
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " !";
     }
 }
